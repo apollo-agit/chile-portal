@@ -1,0 +1,115 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="student-advisor">
+    <template>
+        <style>
+    :host {
+            --paper-card-header-color: var(--primary-white);
+            --paper-card-content: {
+                color: var(--primary-text-color);
+            }
+            @apply --paper-card-content;
+        }
+        
+        .card-content {
+            background: var(--darken-white);
+            padding: .5rem;
+        }
+        
+        .element-container {
+            max-width: 300px;
+        }
+        
+        iron-icon.sa {
+            --iron-icon-height: 60px;
+            --iron-icon-width: 60px;
+        }
+        
+        .centered {
+            text-align: center;
+        }
+        
+        .advisor-info {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .info {
+            font-size: .8rem;
+        }
+        
+        .circle {
+            position: relative;
+            top: 16px;
+            left: -10px;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            background: var(--primary-background-color);
+            font-size: 1.5rem;
+            line-height: 2rem;
+            z-index: 1;
+
+            -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+            box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+        }
+    }
+        </style>
+
+        
+        <div class="element-container">
+        <div class="circle">?</div>
+            <paper-card heading="{{localize('title')}}" image="images/card-background.jpg">
+                <div class="card-content">
+                    <div class="centered">
+                        <iron-icon icon="icons:face" class="sa"></iron-icon>
+                    </div>
+                    <div class="advisor-info">
+                        <span class="info">{{localize('advisorname')}}:</span> Sam Iam
+                    </div>
+                    <div class="advisor-info">
+                        <span class="info">{{localize('advisorphone')}}:</span> (02)2640 6090
+                    </div>
+                    <div class="advisor-info">
+                        <span class="info">{{localize('advisoremail')}}:</span> samiam@here.com
+                    </div>
+                    <div class="advisor-info">
+                        <span class="info">{{localize('advisorlocation')}}:</span> 3412
+                    </div>
+                </div>
+            </paper-card>
+        </div>
+    </template>
+    <script>
+    class StudentAdvisor extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+        static get is() {
+            return 'student-advisor'
+        }
+
+        static get properties() {
+
+            return {
+                language: {
+                    value: 'en'
+                },
+                resources: {
+                    value() {
+                        var s = this.loadResources(this.resolveUrl('student-advisor-locales.json'));
+                        return s;
+                    }
+                }
+            };
+
+        }
+    }
+
+    customElements.define(StudentAdvisor.is, StudentAdvisor);
+    </script>
+
+</dom-module>

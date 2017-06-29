@@ -1,0 +1,16 @@
+{
+    "en": {
+         "title": "Information About the Councilor",
+         "advisorname": "Name of Advisor" ,
+         "advisorphone": "Phone of Advisor" ,
+         "advisoremail": "Email of Advisor",
+         "advisorlocation": "Location of Advisor"
+    },
+    "es": {
+    	 "title": "Informacion Acerca Del Conselejero",
+         "advisorname": "Nombre Consejero" ,
+         "advisorphone": "Fono Consejero" ,
+         "advisoremail": "E-mail Consejero" ,
+         "advisorlocation": "Anexo Consejero" 
+    }
+}
