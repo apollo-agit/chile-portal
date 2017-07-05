@@ -1,0 +1,47 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="portal-help">
+    <template>
+        <style is="custom-style">
+        .circle {
+            position: relative;
+            top: 16px;
+            left: -10px;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            background: var(--primary-background-color);
+            font-size: 1.5rem;
+            line-height: 1.6rem;
+            z-index: 1;
+            -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+            box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+        }
+        
+        iron-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+        </style>
+
+        <div class="circle">
+            <iron-icon icon="help-outline"></iron-icon>
+        </div>
+    </template>
+    <script>
+    class PortalHelp extends Polymer.Element {
+        static get is() {
+            return 'portal-help'
+        }
+        constructor() {
+            super();
+        }
+    }
+    customElements.define(PortalHelp.is, PortalHelp);
+    </script>
+
+</dom-module>

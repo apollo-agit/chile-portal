@@ -2,16 +2,17 @@
 <link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../portal-help/portal-help.html">
 
 <dom-module id="student-advisor">
     <template>
-        <style>
-    :host {
+        <style is="custom-style">
+        :host {
             --paper-card-header-color: var(--primary-white);
             --paper-card-content: {
                 color: var(--primary-text-color);
             }
-            @apply --paper-card-content;
         }
         
         .card-content {
@@ -38,50 +39,49 @@
         }
         
         .info {
-            font-size: .8rem;
+            font-size: .7rem;
         }
         
-        .circle {
-            position: relative;
-            top: 16px;
-            left: -10px;
-            width: 2rem;
-            height: 2rem;
-            text-align: center;
-            color: #fff;
-            border-radius: 50%;
-            background: var(--primary-background-color);
-            font-size: 1.5rem;
-            line-height: 2rem;
-            z-index: 1;
-
-            -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-            -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-            box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+        .info-data {
+            margin-left: 10px;
         }
-    }
+        
+        paper-card {
+            --paper-card-header-image-text: {
+                margin-bottom: 50px;
+            }
+        }
         </style>
 
-        
+
         <div class="element-container">
-        <div class="circle">?</div>
-            <paper-card heading="{{localize('title')}}" image="images/card-background.jpg">
+            <portal-help></portal-help>
+            <paper-card class="advisor" heading="{{localize('title')}}" image="images/card-background.jpg">
                 <div class="card-content">
                     <div class="centered">
                         <iron-icon icon="icons:face" class="sa"></iron-icon>
                     </div>
                     <div class="advisor-info">
-                        <span class="info">{{localize('advisorname')}}:</span> Sam Iam
+                        <span class="info">{{localize('advisorname')}}:</span>
+                        <div class="info-data">Sam Iam</div>
                     </div>
                     <div class="advisor-info">
-                        <span class="info">{{localize('advisorphone')}}:</span> (02)2640 6090
+                        <span class="info">{{localize('advisorphone')}}:</span>
+                        <div class="info-data">(02)2640 6090</div>
                     </div>
                     <div class="advisor-info">
-                        <span class="info">{{localize('advisoremail')}}:</span> samiam@here.com
+                        <span class="info">{{localize('advisoremail')}}:</span>
+                        <div class="info-data">samiam@here.com</div>
                     </div>
                     <div class="advisor-info">
-                        <span class="info">{{localize('advisorlocation')}}:</span> 3412
+                        <span class="info">{{localize('advisorlocation')}}:</span>
+                        <div class="info-data">3412</div>
                     </div>
+                </div>
+                <div class="card-actions horizontal justified centered">
+                    <paper-icon-button icon="favorite"></paper-icon-button>
+                    <paper-icon-button icon="bookmark"></paper-icon-button>
+                    <paper-icon-button icon="social:share"></paper-icon-button>
                 </div>
             </paper-card>
         </div>
