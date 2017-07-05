@@ -4,13 +4,15 @@
          "advisorname": "Name of Advisor" ,
          "advisorphone": "Phone of Advisor" ,
          "advisoremail": "Email of Advisor",
-         "advisorlocation": "Location of Advisor"
+         "advisorlocation": "Location of Advisor",
+         "advisorhelp": "Advisor Help"
     },
     "es": {
     	 "title": "Informacion Acerca Del Conselejero",
          "advisorname": "Nombre Consejero" ,
          "advisorphone": "Fono Consejero" ,
          "advisoremail": "E-mail Consejero" ,
-         "advisorlocation": "Anexo Consejero" 
+         "advisorlocation": "Anexo Consejero",
+         "advisorhelp": "Ayuda del Asesor" 
     }
 }
