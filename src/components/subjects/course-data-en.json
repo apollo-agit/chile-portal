@@ -1,0 +1,25 @@
+[{
+    "name": "Level 1 - Computer Programming for Engineering Applications",
+    "desc": "Presents the fundamentals of computing and computer programming (procedural and object-oriented programming) in an engineering context.",
+    "instructor": "R. Juanes",
+    "avatar": "73.jpg",
+    "start": "01/01/2018",
+    "end": "05/05/2018",
+    "location": "4138"
+}, {
+    "name": "Level 2 - Big Engineering: Small Solutions with a Large Impact",
+    "desc": "Provides a practical introduction to key topics, current research and innovative methods in the diverse field of civil and environmental engineering.",
+    "instructor": "R. Juanes",
+    "avatar": "73.jpg",
+    "start": "05/01/2018",
+    "end": "11/05/2018",
+    "location": "4138"
+}, {
+    "name": "Level 1 - Uncertainty in Engineering",
+    "desc": "Introduces probability and statistics with an emphasis on understanding, quantifying, and modeling uncertainty. Topics include events and their probability, the total probability and Bayes' theorems, discrete and continuous random variables and vectors, covariance, correlations, and conditional analysis.",
+    "instructor": "S. Saavedra",
+    "avatar": "74.jpg",
+    "start": "05/01/2018",
+    "end": "11/05/2018",
+    "location": "4125"
+}]

@@ -22,7 +22,7 @@
 
 <dom-module id="my-app">
     <template>
-        <style>
+        <style is="custom-style">
         :host {
             --app-primary-color: var(--primary-background-color);
             --app-primary-text-color: var(--primary-text-color);
@@ -31,6 +31,8 @@
             --app-disabled-text-color: var(--disabled-text-color);
             --app-divider-color: var(--divider-color);
             --app-error-color: var(--error-color);
+            --app-white: var(--primary-white);
+            --app-off-white: var(--darken-white);
             display: block;
         }
         

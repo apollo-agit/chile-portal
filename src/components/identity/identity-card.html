@@ -3,6 +3,7 @@
 <link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="common/app-theme.html">
 
 <dom-module id="identity-card">
     <template>
@@ -15,7 +16,7 @@
         }
         
         .card-content {
-            background: var(--darken-white);
+            background: var(--app-white);
             padding: .5rem;
         }
         
@@ -99,7 +100,7 @@
                 title: String,
                 imageUrl: String,
                 language: {
-                    value: 'es'
+                    value: 'en'
                 },
                 resources: {
                     value() {

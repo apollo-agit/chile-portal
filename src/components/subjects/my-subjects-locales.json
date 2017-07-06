@@ -1,0 +1,22 @@
+{
+    "en": {
+        "title": "My Subjects",
+        "intro": "Introductory Courses",
+        "free": "Complementory Courses",
+        "current": "Current Courses",
+        "future": "Future Courses",
+        "location": "Location",
+        "dates": "Dates",
+        "instructor": "Instructor"
+     },
+    "es": {
+        "title": "Mis Asignaturas",
+        "intro": "Cursos Introductorios",
+        "free": "Cursos Complementarios",
+        "current": "Cursos actuales",
+        "future": "Cursos futuros",
+        "location": "Ubicación",
+        "dates": "Fechas",
+        "instructor": "Instructor"
+     }
+}
