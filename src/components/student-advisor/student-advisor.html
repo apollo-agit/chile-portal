@@ -1,55 +1,13 @@
 <link rel="import" href="../../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
-<link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../identity/identity-card.html">
 <link rel="import" href="../portal-help/portal-help.html">
 
 <dom-module id="student-advisor">
     <template>
         <style is="custom-style">
-        :host {
-            --paper-card-header-color: var(--primary-white);
-            --paper-card-content: {
-                color: var(--primary-text-color);
-            }
-        }
-        
-        .card-content {
-            background: var(--darken-white);
-            padding: .5rem;
-        }
-        
         .element-container {
             max-width: 300px;
-        }
-        
-        iron-icon.sa {
-            --iron-icon-height: 60px;
-            --iron-icon-width: 60px;
-        }
-        
-        .centered {
-            text-align: center;
-        }
-        
-        .advisor-info {
-            width: 100%;
-            margin-top: 1rem;
-        }
-        
-        .info {
-            font-size: .7rem;
-        }
-        
-        .info-data {
-            margin-left: 10px;
-        }
-        
-        paper-card {
-            --paper-card-header-image-text: {
-                margin-bottom: 50px;
-            }
         }
         </style>
         <div class="element-container">
@@ -59,38 +17,11 @@
                 <p>{{localize('advisorhelp-p2')}}</p>
                 <p>{{localize('advisorhelp-p3')}}</p>
 
-               <iframe width="420" height="345" src="https://www.youtube.com/embed/a7bZhAjUIBM?autoplay=1">
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/a7bZhAjUIBM?autoplay=1">
                 </iframe>
 
             </portal-help>
-            <paper-card class="advisor" heading="{{localize('title')}}" image="images/card-background.jpg">
-                <div class="card-content">
-                    <div class="centered">
-                        <iron-icon icon="icons:face" class="sa"></iron-icon>
-                    </div>
-                    <div class="advisor-info">
-                        <span class="info">{{localize('advisorname')}}:</span>
-                        <div class="info-data">Sam Iam</div>
-                    </div>
-                    <div class="advisor-info">
-                        <span class="info">{{localize('advisorphone')}}:</span>
-                        <div class="info-data">(02)2640 6090</div>
-                    </div>
-                    <div class="advisor-info">
-                        <span class="info">{{localize('advisoremail')}}:</span>
-                        <div class="info-data">samiam@here.com</div>
-                    </div>
-                    <div class="advisor-info">
-                        <span class="info">{{localize('advisorlocation')}}:</span>
-                        <div class="info-data">3412</div>
-                    </div>
-                </div>
-                <div class="card-actions horizontal justified centered">
-                    <paper-icon-button icon="favorite"></paper-icon-button>
-                    <paper-icon-button icon="bookmark"></paper-icon-button>
-                    <paper-icon-button icon="social:share"></paper-icon-button>
-                </div>
-            </paper-card>
+            <identity-card title="{{localize('title')}}" image-url="images/card-background.jpg" name="Sam Iam" phone="(02)2640 6090" email="samiam@here.com" location="3412"></identity-card>
         </div>
     </template>
     <script>

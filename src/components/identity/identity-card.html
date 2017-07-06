@@ -1,0 +1,118 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../../bower_components/iron-icons/social-icons.html">
+
+<dom-module id="identity-card">
+    <template>
+        <style is="custom-style">
+        :host {
+            --paper-card-header-color: var(--primary-white);
+            --paper-card-content: {
+                color: var(--primary-text-color);
+            }
+        }
+        
+        .card-content {
+            background: var(--darken-white);
+            padding: .5rem;
+        }
+        
+        .element-container {
+            max-width: 300px;
+        }
+        
+        iron-icon.sa {
+            --iron-icon-height: 60px;
+            --iron-icon-width: 60px;
+        }
+        
+        .centered {
+            text-align: center;
+        }
+        
+        .advisor-info {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .info {
+            font-size: .7rem;
+            color: var(--app-primary-color);
+            font-weight: bold;
+        }
+        
+        .info-data {
+            margin-left: 10px;
+        }
+        
+        paper-card {
+            --paper-card-header-image-text: {
+                margin-bottom: 50px;
+            }
+        }
+        </style>
+
+        <paper-card class="advisor" heading="[[title]]" image="[[imageUrl]]">
+            <div class="card-content">
+                <div class="centered">
+                    <iron-icon icon="icons:face" class="sa"></iron-icon>
+                </div>
+                <div class="advisor-info">
+                    <span class="info">{{localize('name')}}:</span>
+                    <div id="name" class="info-data">[[name]]</div>
+                </div>
+                <div class="advisor-info">
+                    <span class="info">{{localize('phone')}}:</span>
+                    <div id="phone" class="info-data">[[phone]]</div>
+                </div>
+                <div class="advisor-info">
+                    <span class="info">{{localize('email')}}:</span>
+                    <div id="email" class="info-data">[[email]]</div>
+                </div>
+                <div class="advisor-info">
+                    <span class="info">{{localize('location')}}:</span>
+                    <div id="location" class="info-data">[[location]]</div>
+                </div>
+            </div>
+            <div class="card-actions horizontal justified centered">
+                <paper-icon-button icon="favorite"></paper-icon-button>
+                <paper-icon-button icon="bookmark"></paper-icon-button>
+                <paper-icon-button icon="social:share"></paper-icon-button>
+            </div>
+        </paper-card>
+
+    </template>
+    <script>
+    class IdentityCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+        static get is() {
+            return 'identity-card'
+        }
+
+        static get properties() {
+            return {
+                name: String,
+                phone: String,
+                email: String,
+                location: String,
+                title: String,
+                imageUrl: String,
+                language: {
+                    value: 'es'
+                },
+                resources: {
+                    value() {
+                        var s = this.loadResources(this.resolveUrl('identity-locales.json'));
+                        return s;
+                    }
+                }
+            };
+
+        }
+    }
+
+    customElements.define(IdentityCard.is, IdentityCard);
+    </script>
+
+</dom-module>

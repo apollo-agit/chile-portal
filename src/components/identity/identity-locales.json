@@ -1,0 +1,14 @@
+{
+    "en": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "location": "Location"
+     },
+    "es": {
+        "name": "Nombre",
+        "phone": "Fono",
+        "email": "E-mail",
+        "location": "Anexo"
+     }
+}
