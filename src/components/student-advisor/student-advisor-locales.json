@@ -1,18 +1,25 @@
 {
     "en": {
-         "title": "Information About the Councilor",
-         "advisorname": "Name of Advisor" ,
-         "advisorphone": "Phone of Advisor" ,
-         "advisoremail": "Email of Advisor",
-         "advisorlocation": "Location of Advisor",
-         "advisorhelp": "Advisor Help"
+        "title": "Information About the Councilor",
+        "advisorname": "Name of Advisor",
+        "advisorphone": "Phone of Advisor",
+        "advisoremail": "Email of Advisor",
+        "advisorlocation": "Location of Advisor",
+        "advisorhelp": "Advisor Help",
+        "advisorhelp-p1": "Academic Advising is an opportunity to exchange information designed to help students reach their educational and career goals. Advising is a shared responsibility between an adviser and the student. Ultimately, it is the responsibility of the student to make decisions about his/her life goals by creating a plan to reach those goals.",
+        "advisorhelp-p2": "Academic advisers can assist in this process by helping the student understand options, determine resources and, when necessary, identify alternatives.",
+        "advisorhelp-p3": "While students are urged to keep parents informed of plans and progress, the advising relationship uniquely is between the academic adviser and the student."
     },
     "es": {
-    	 "title": "Informacion Acerca Del Conselejero",
-         "advisorname": "Nombre Consejero" ,
-         "advisorphone": "Fono Consejero" ,
-         "advisoremail": "E-mail Consejero" ,
-         "advisorlocation": "Anexo Consejero",
-         "advisorhelp": "Ayuda del Asesor" 
+        "title": "Informacion Acerca Del Conselejero",
+        "advisorname": "Nombre Consejero",
+        "advisorphone": "Fono Consejero",
+        "advisoremail": "E-mail Consejero",
+        "advisorlocation": "Anexo Consejero",
+        "advisorhelp": "Ayuda del Asesor",
+        "advisorhelp-p1": "La Asesoría Académica es una oportunidad para intercambiar información diseñada para ayudar a los estudiantes a alcanzar sus metas educativas y profesionales.Asesorar es una responsabilidad compartida entre un asesor y el estudiante.En última instancia,    es la responsabilidad del estudiante tomar decisiones sobre sus metas de la vida creando un plan para alcanzar esas metas.",
+        "advisorhelp-p2": "Los asesores académicos pueden ayudar en este proceso ayudando al estudiante a entender las opciones, determinar los recursos y, cuando sea necesario, identificar alternativas.",
+        "advisorhelp-p3": "Mientras se insta a los estudiantes a que mantengan a los padres informados de los planes y el progreso, la relación de asesoramiento es única entre el asesor académico y el estudiante."
+
     }
 }
