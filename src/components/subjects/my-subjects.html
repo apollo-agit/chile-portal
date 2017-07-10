@@ -4,14 +4,11 @@
 <link rel="import" href="../../../../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../../../bower_components/iron-pages/iron-pages.html">
-<link rel="import" href="../../../../bower_components/iron-list/iron-list.html">
 <link rel="import" href="../../../../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../../../../bower_components/iron-image/iron-image.html">
-<link rel="import" href="../../../../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../../../../bower_components/paper-badge/paper-badge.html">
-<link rel="import" href="../../../../bower_components/iron-icon/iron-icon.html">
 
 <link rel="import" href="../portal-help/portal-help.html">
+<link rel="import" href="../course-list/course-list.html">
+
 
 <dom-module id="my-subjects">
     <template>
@@ -43,118 +40,7 @@
             }
         }
         
-        paper-badge {
-            margin-top: 5px;
-        }
-        
-        paper-badge[label="0"] {
-            opacity: 0;
-        }
-        
-        @media (min-width: 640px) {
-            paper-badge {
-                display: none;
-            }
-        }
-        
-        #itemsList,
-        #selectedItemsList {
-            @apply --layout-flex;
-        }
-        
-        .item {
-            @apply --layout-horizontal;
-            cursor: pointer;
-            padding: 16px 22px;
-            border-bottom: 1px solid #DDD;
-        }
-        
-        .item:focus,
-        .item.selected:focus {
-            outline: 0;
-            background-color: #ddd;
-        }
-        
-        .item.selected .star {
-            color: var(--paper-blue-600);
-        }
-        
-        .avatar {
-            height: 40px;
-            width: 40px;
-            border-radius: 20px;
-            box-sizing: border-box;
-            background-color: #ddd;
-        }
-        
-        .pad {
-            @apply --layout-flex;
-            @apply --layout-vertical;
-            padding: 0 16px;
-        }
-        
-        .primary {
-            font-size: 16px;
-            margin-bottom: .5rem;
-        }
-        
-        .secondary {
-            font-size: 14px;
-            margin-bottom: .5rem;
-        }
-        
-        .dim {
-            color: gray;
-        }
-        
-        .star {
-            width: 24px;
-            height: 24px;
-        }
-        
-        paper-item {
-            white-space: nowrap;
-            cursor: pointer;
-        }
-        
-        paper-item:hover::after {
-            content: "－";
-            width: 16px;
-            height: 16px;
-            display: block;
-            border-radius: 50% 50%;
-            background-color: var(--google-red-300);
-            margin-left: 10px;
-            line-height: 16px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            position: absolute;
-            right: 15px;
-            top: calc(50% - 8px);
-        }
-        
-        .no-selection {
-            color: #999;
-            margin-left: 10px;
-            line-height: 50px;
-        }
-        
-        iron-list {
-            @apply --layout-flex;
-        }
-        
-        .info {
-            font-size: .7rem;
-            color: var(--app-primary-color);
-            font-weight: bold;
-        }
-        
-        .info-data {
-            margin-left: 10px;
-            margin-bottom: .5rem;
-        }
+ 
         </style>
         <iron-ajax url="src/components/subjects/course-data-en.json" last-response="{{data}}" auto></iron-ajax>
         <portal-help></portal-help>
@@ -170,91 +56,16 @@
             <div class="card-content">
                 <iron-pages selected="{{selected}}">
                     <div>
-                        <iron-list items="[[data]]" as="item" selected-items="{{selectedItems}}" selection-enabled multi-selection>
-                            <template>
-                                <div>
-                                    <div tabindex$="[[tabIndex]]" aria-label$="Select/Deselect [[item.name]]" class$="[[_computedClass(selected)]]">
-                                        <img class="avatar" src="images/[[item.avatar]]">
-                                        <div class="pad">
-                                            <div class="primary">
-                                                [[item.name]]
-                                            </div>
-                                            <div class="secondary dim">[[item.desc]]</div>
-                                            <div>
-                                                <div class="info">{{localize('instructor')}}</div>
-                                                <div class="info-data">[[item.instructor]]</div>
-                                            </div>
-                                            <div>
-                                                <div class="info">{{localize('dates')}}</div>
-                                                <div class="info-data">[[item.start]] - [[item.end]]</div>
-                                            </div>
-                                        </div>
-                                        <iron-icon icon$="[[iconForItem(selected)]]" class="star"></iron-icon>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                            </template>
-                        </iron-list>
+                        <course-list data=[[data]]></course-list>
                     </div>
                     <div>
-                        <iron-list items="[[data]]" as="item">
-                            <template>
-                                <div>
-                                    <div tabindex$="[[tabIndex]]" aria-label$="Select/Deselect [[item.name]]" class$="[[_computedClass(selected)]]">
-                                        <img class="avatar" src="images/[[item.avatar]]">
-                                        <div class="pad">
-                                            <div class="primary">
-                                                [[item.name]]
-                                            </div>
-                                            <div class="secondary dim">[[item.desc]]</div>
-                                            <div>
-                                                <p>[[item.instructor]]</p>
-                                            </div>
-                                        </div>
-                                        <iron-icon icon$="[[iconForItem(selected)]]" class="star"></iron-icon>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                            </template>
-                        </iron-list>
+                       <course-list data=[[data]]></course-list>
                     </div>
                     <div>
-                        <iron-list items="[[data]]" as="item">
-                            <template>
-                                <div>
-                                    <div tabindex$="[[tabIndex]]" aria-label$="Select/Deselect [[item.name]]" class$="[[_computedClass(selected)]]">
-                                        <img class="avatar" src="images/[[item.avatar]]">
-                                        <div class="pad">
-                                            <div class="primary">
-                                                [[item.name]]
-                                            </div>
-                                            <div class="secondary dim">[[item.desc]]</div>
-                                        </div>
-                                        <iron-icon icon$="[[iconForItem(selected)]]" class="star"></iron-icon>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                            </template>
-                        </iron-list>
+                       <course-list data=[[data]]></course-list>
                     </div>
                     <div>
-                        <iron-list items="[[data]]" as="item">
-                            <template>
-                                <div>
-                                    <div tabindex$="[[tabIndex]]" aria-label$="Select/Deselect [[item.name]]" class$="[[_computedClass(selected)]]">
-                                        <img class="avatar" src="images/[[item.avatar]]">
-                                        <div class="pad">
-                                            <div class="primary">
-                                                [[item.name]]
-                                            </div>
-                                            <div class="secondary dim">[[item.desc]]</div>
-                                        </div>
-                                        <iron-icon icon$="[[iconForItem(selected)]]" class="star"></iron-icon>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                            </template>
-                        </iron-list>
+                      <course-list data=[[data]]></course-list>
                     </div>
                 </iron-pages>
             </div>
@@ -269,7 +80,6 @@
         static get properties() {
 
             return {
-                selectedItems: Object,
                 data: Object,
                 selected: {
                     type: String,
@@ -288,25 +98,6 @@
 
         }
 
-        iconForItem(isSelected) {
-            return isSelected ? 'star' : 'star-border';
-        }
-
-        _computedClass(isSelected) {
-            var classes = 'item';
-            if (isSelected) {
-                classes += ' selected';
-            }
-            return classes;
-        }
-
-        _unselect(e) {
-            this.$.itemsList.deselectItem(e.model.item);
-        }
-
-        _getFormattedCount(count) {
-            return count > 0 ? '(' + count + ')' : '';
-        }
     }
     customElements.define(MySubjects.is, MySubjects);
     </script>

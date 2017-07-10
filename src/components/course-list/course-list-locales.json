@@ -1,0 +1,12 @@
+{
+    "en": {
+        "location": "Location",
+        "dates": "Dates",
+        "instructor": "Instructor"
+     },
+    "es": {
+        "location": "Ubicación",
+        "dates": "Fechas",
+        "instructor": "Instructor"
+     }
+}
