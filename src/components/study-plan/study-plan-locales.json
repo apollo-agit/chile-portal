@@ -1,0 +1,26 @@
+{
+    "en": {
+        "title": "My Studay Plan",
+        "level": "Levels",
+        "state": "Status",
+        "state-approved": "Approved",
+        "state-fail": "Failed",
+        "state-not-enrolled": "Not Enrolled",
+        "state-enrolled": "Enrolled",
+        "state-not-validated": "Not Validated",
+        "state-validated": "Validated",
+        "desc": "In this module, you can visualize the mesh of the academic program, which graphically represents the different subjects, grouped by level."
+    },
+    "es": {
+        "title": "Mi Malla",
+        "level": "Niveles",
+        "state": "Estados",
+        "state-approved": "Approved",
+        "state-fail": "Failed",
+        "state-not-enrolled": "No Cursando",
+        "state-enrolled": "Cursando",
+        "state-not-validated": "Convalidado",
+        "state-validated": "Validado",
+        "desc": "En este modulo, podras visualizar la malla del programa academico, que representa graficamente las distintas materias, agrupada por nivel."
+    }
+}

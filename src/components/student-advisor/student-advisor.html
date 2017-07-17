@@ -1,5 +1,7 @@
 <link rel="import" href="../../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../../../bower_components/iron-ajax/iron-ajax.html">
+
 <link rel="import" href="../identity/identity-card.html">
 <link rel="import" href="../portal-help/portal-help.html">
 
@@ -9,6 +11,8 @@
         .element-container {
             max-width: 300px;
         }
+
+   
         </style>
         <div class="element-container">
             <portal-help header-text="{{localize('advisorhelp')}}">
@@ -17,12 +21,13 @@
                 <p>{{localize('advisorhelp-p2')}}</p>
                 <p>{{localize('advisorhelp-p3')}}</p>
 
-                <iframe width="420" height="345" src="https://www.youtube.com/embed/a7bZhAjUIBM?autoplay=1">
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/a7bZhAjUIBM?autoplay=0">
                 </iframe>
 
             </portal-help>
-            <identity-card title="{{localize('title')}}" image-url="images/card-background.jpg" name="Sam Iam" phone="(02)2640 6090" email="samiam@here.com" location="3412"></identity-card>
+            <identity-card title="{{localize('title')}}" image-url="[[profile.image]]" name="[[profile.name]]" phone="[[profile.phone]]" email="[[profile.email]]" location="[[profile.location]]"></identity-card>
         </div>
+        <iron-ajax url="src/components/student-advisor/advisor.json" handle-as="json" last-response="{{profile}}" auto></iron-ajax>
     </template>
     <script>
     class StudentAdvisor extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -33,8 +38,9 @@
         static get properties() {
 
             return {
+                profile: Object,
                 language: {
-                    value: 'en'
+                    value: 'es'
                 },
                 resources: {
                     value() {
