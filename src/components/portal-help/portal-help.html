@@ -55,7 +55,7 @@
                 <slot></slot>
             </div>
             <div class="actions">
-                <paper-fab mini icon="close"></paper-fab>
+                <paper-fab mini icon="close" on-click="closeDialog"></paper-fab>
             </div>
 
         </paper-dialog>
@@ -79,6 +79,10 @@
         openDialog() {
             this.$.animated.positionTarget = this.$.helproot;
             this.$.animated.open();
+        }
+
+        closeDialog() {
+            this.$.animated.close();
         }
     }
     customElements.define(PortalHelp.is, PortalHelp);
