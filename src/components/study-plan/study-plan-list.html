@@ -1,0 +1,117 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../../../../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../../bower_components/google-chart/google-chart.html">
+<link rel="import" href="../../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="study-plan-list">
+    <template>
+        <style include="app-grid-style">
+         :host {
+            --app-grid-columns: 2;
+            --app-grid-item-height: 100%;
+        }
+
+        ul li {
+            padding: 50px;
+            list-style: none;
+        }
+
+        paper-card {
+            --paper-card-content: {
+                background: white;
+            }
+
+            --paper-card-header-text: {
+                text-align: center;
+                font-weight: bold;
+                color: white;
+            }
+
+            --paper-card-actions: {
+                color: var(--app-black);
+            }
+        }
+
+        google-chart {
+            width: 450px;
+            height: 250px;
+        }
+        </style>
+        <ul class="app-grid">
+            <li class="item">
+                <paper-card heading="Accounting Study Plan">
+                    <div class="card-content">
+                        <google-chart type='pie' options='{"title": "Course Completion"}' cols='[{"label":"Status", "type":"string"}, {"label":"Days", "type":"number"}]' rows='[["Completed", 13],["Current", 17],["Future", 70]]'>
+                        </google-chart>
+                    </div>
+                    <div class="card-actions">
+                        <paper-icon-button icon="icons:list"></paper-icon-button>
+                        <paper-icon-button icon="icons:event"></paper-icon-button>
+                        <paper-icon-button icon="icons:face"></paper-icon-button>
+                        <paper-icon-button icon="icons:content-paste"></paper-icon-button>
+                    </div>
+                </paper-card>
+            </li>
+            <li class="item">
+                <paper-card heading="Music Study Plan">
+                    <div class="card-content">
+                        <google-chart type='pie' options='{"title": "Course Completion"}' cols='[{"label":"Status", "type":"string"}, {"label":"Days", "type":"number"}]' rows='[["Completed", 50],["Current", 10],["Future", 40]]'>
+                        </google-chart>
+                    </div>
+                    <div class="card-actions">
+                        <paper-icon-button icon="icons:list"></paper-icon-button>
+                        <paper-icon-button icon="icons:event"></paper-icon-button>
+                        <paper-icon-button icon="icons:face"></paper-icon-button>
+                        <paper-icon-button icon="icons:content-paste"></paper-icon-button>
+                    </div>
+                </paper-card>
+            </li>
+            <li class="item">
+                <paper-card heading="Music Study Plan">
+                    <div class="card-content">
+                        <google-chart type='pie' options='{"title": "Course Completion"}' cols='[{"label":"Status", "type":"string"}, {"label":"Days", "type":"number"}]' rows='[["Completed", 100],["Current", 0],["Future", 0]]'>
+                        </google-chart>
+                    </div>
+                    <div class="card-actions">
+                        <paper-icon-button icon="icons:list"></paper-icon-button>
+                        <paper-icon-button icon="icons:event"></paper-icon-button>
+                        <paper-icon-button icon="icons:face"></paper-icon-button>
+                        <paper-icon-button icon="icons:content-paste"></paper-icon-button>
+                    </div>
+                </paper-card>
+            </li>
+        </ul>
+    </template>
+    <script>
+    class StudyPlanList extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+        static get is() {
+            return 'study-plan-list'
+        }
+
+        static get properties() {
+            return {
+
+                language: {
+                    value: 'en'
+                },
+                resources: {
+                    value() {
+                        var s = this.loadResources(this.resolveUrl('study-plan-locales.json'));
+                        return s;
+                    }
+                }
+            };
+
+        }
+
+        constructor() {
+            super();
+        }
+    }
+    customElements.define(StudyPlanList.is, StudyPlanList);
+    </script>
+
+</dom-module>
